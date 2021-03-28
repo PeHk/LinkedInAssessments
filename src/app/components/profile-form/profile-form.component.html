@@ -1,0 +1,37 @@
+<div class="row" [formGroup]="form">
+  <div class="col-12">
+    <div class="form-group">
+      <label for="nameInput">Name:</label>
+      <input type="text" formControlName="name" class="form-control" id="nameInput" placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+      <label for="emailInput">Email:</label>
+      <input type="email" formControlName="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter your email">
+    </div>
+    <div class="form-group">
+      <label for="phoneInput">Phone number:</label>
+      <input type="tel" formControlName="phoneNumber" class="form-control" id="phoneInput" placeholder="Enter your phone number">
+    </div>
+    <div *ngIf="isSuccess" class="alert alert-success text-center" role="alert">
+      Success!
+    </div>
+    <div *ngIf="isError" class="alert alert-danger" role="alert">
+      Oops! Something went wrong.
+    </div>
+    <div class="row">
+      <div class="col-6 text-left">
+        <button class="btn btn-danger" (click)="resetForm()">Reset</button>
+      </div>
+      <div class="col-6 text-right">
+        <button [disabled]="isDisabled" class="btn btn-primary" (click)="submit()">
+          <ng-container *ngIf="isDisabled">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <span class="sr-only">Loading...</span>
+          </ng-container>
+          Submit
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

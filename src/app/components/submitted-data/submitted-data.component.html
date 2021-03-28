@@ -1,0 +1,12 @@
+<div *ngIf="profile" class="card m-2">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12">
+        <p><span class="font-weight-bold">name:</span> {{profile.name}}</p>
+        <p><span class="font-weight-bold">email:</span> {{profile.email}}</p>
+        <p *ngIf="profile.phoneNumber"><span class="font-weight-bold">phone_number:</span> {{profile.phoneNumber}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
